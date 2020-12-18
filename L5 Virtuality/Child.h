@@ -2,6 +2,7 @@
 #include "Parent.h"
 #include <iostream>
 using namespace std;
+
 class Child : public Parent
 {
 protected:
@@ -10,7 +11,7 @@ protected:
 public:
 	Child() : Parent() {
 		cry = true;
-		cout << "Конструктор по умолчанию " + classname + "\n";
+		cout << "Конструктор по умолчанию " + classname + "()\n";
 	}
 
 	Child(int age, int money, bool cry) : Parent(age, money) {
@@ -31,8 +32,8 @@ public:
 	bool isA(string classname) {
 		cout << "Метод isA(string classname) класса " + classname + " -> ";
 		if (classname == "Child")
-			return 1;
-		return 0;
+			return true;
+		return false;
 	}
 
 	void method() {

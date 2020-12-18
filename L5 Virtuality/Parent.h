@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 using namespace std;
+
 class Parent
 {
 protected:
@@ -16,7 +17,7 @@ public:
 	Parent(int age, int money) {
 		this->age = age;
 		this->money = money;
-		cout << "Конструктор с параметрами " + classname + "(int age, int money)\n";
+		cout << "Конструктор с параметрами " + classname + "(int age, int money\n)";
 	}
 
 	Parent(Parent& parent) {
@@ -31,10 +32,10 @@ public:
 	}
 
 	virtual bool isA(string classname) {
-		cout << "Метод isA класса " + classname + " -> ";
+		cout << "Метод isA(string classname) класса " + classname + " -> ";
 		if (classname == "Parent") 
-			return 1;
-		return 0;
+			return true;
+		return false;
 	}
 
 	void method() {
