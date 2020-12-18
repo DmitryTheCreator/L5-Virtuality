@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
 #include "Parent.h"
+#include <iostream>
 using namespace std;
 class Child : public Parent
 {
@@ -8,9 +8,9 @@ protected:
 	bool cry;
 	string classname = "Child";
 public:
-	Child() {
+	Child() : Parent() {
 		cry = true;
-		cout << "Конструктор по умолчанию Parent()\n";
+		cout << "Конструктор по умолчанию " + classname + "\n";
 	}
 
 	Child(int age, int money, bool cry) : Parent(age, money) {
@@ -23,9 +23,22 @@ public:
 		cout << "Копирующий конструктор " + classname + "(Child& child)\n";
 	}
 
+	string className() {
+		cout << "Метода classname() класса " + classname + " -> ";
+		return classname;
+	}
+
+	bool isA(string classname) {
+		cout << "Метод isA(string classname) класса " + classname + " -> ";
+		if (classname == "Child")
+			return 1;
+		return 0;
+	}
+
 	void method() {
 		cout << "Метод " + classname + "\n";
 	}
+
 	virtual ~Child() {
 		cout << "Виртуальный деструктор ~" + classname + "\n";
 	}

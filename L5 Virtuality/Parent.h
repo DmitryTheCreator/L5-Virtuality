@@ -25,6 +25,18 @@ public:
 		cout << "Копирующий конструктор " + classname + "(Parent& parent)\n";
 	}
 
+	virtual string className() {
+		cout << "Метода classname() класса " + classname + " -> ";
+		return classname;
+	}
+
+	virtual bool isA(string classname) {
+		cout << "Метод isA класса " + classname + " -> ";
+		if (classname == "Parent") 
+			return 1;
+		return 0;
+	}
+
 	void method() {
 		cout << "Метод " + classname + "\n";
 	}
